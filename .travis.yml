@@ -17,6 +17,8 @@ android:
 
 before_install:
 - yes | sdkmanager "platforms;android-28"
+- git config --global core.autocrlf false
+
 
 
 deploy:
