@@ -14,13 +14,9 @@ android:
   - addon-google_apis-google-28
   - sys-img-armeabi-v7a-android-21
 
-licenses:
-- '.+'
-
 before_install:
 - yes | sdkmanager "platforms;android-28"
-- git config --global core.autocrlf false
-
+- yes | sdkmanager "build-tools;27.0.3"
 
 
 deploy:
