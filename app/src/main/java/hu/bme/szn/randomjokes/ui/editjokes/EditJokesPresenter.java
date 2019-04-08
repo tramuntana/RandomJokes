@@ -3,6 +3,7 @@ package hu.bme.szn.randomjokes.ui.editjokes;
 import javax.inject.Inject;
 
 import hu.bme.szn.randomjokes.ui.Presenter;
+import hu.bme.szn.randomjokes.model.Joke;
 
 public class EditJokesPresenter extends Presenter<EditJokesScreen> {
 
@@ -22,7 +23,7 @@ public class EditJokesPresenter extends Presenter<EditJokesScreen> {
 
 
     public void editJoke(
-            Long id) {
-        screen.editJoke(id);
+            Long id, Joke joke) {
+        screen.editJoke(id, joke);
     }
 }

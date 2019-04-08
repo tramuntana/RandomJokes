@@ -10,6 +10,7 @@ import android.view.View;
 import javax.inject.Inject;
 
 import hu.bme.szn.randomjokes.R;
+import hu.bme.szn.randomjokes.model.Joke;
 
 public class EditJokesActivity extends AppCompatActivity implements EditJokesScreen {
 
@@ -49,7 +50,7 @@ public class EditJokesActivity extends AppCompatActivity implements EditJokesScr
     }
 
     @Override
-    public void editJoke(Long id) {
+    public void editJoke(Long id, Joke joke) {
         //TODO
     }
 
