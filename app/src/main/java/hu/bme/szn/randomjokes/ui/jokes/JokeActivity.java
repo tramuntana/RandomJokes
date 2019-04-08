@@ -1,4 +1,4 @@
-package hu.bme.szn.randomjokes;
+package hu.bme.szn.randomjokes.ui.jokes;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,22 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class JokeActivity extends AppCompatActivity {
+import javax.inject.Inject;
+
+import hu.bme.szn.randomjokes.R;
+
+public class JokeActivity extends AppCompatActivity  implements JokeScreen {
+
+    @Inject
+    JokePresenter jokePresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_jokes);
+
+        //TODO
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -30,6 +40,8 @@ public class JokeActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //TODO
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
@@ -37,6 +49,9 @@ public class JokeActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        //TODO
+
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
@@ -49,4 +64,29 @@ public class JokeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        jokePresenter.attachScreen(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        jokePresenter.detachScreen();
+    }
+
+
+    @Override
+    public void showRandomJokeSetup() {
+        //TODO
+    }
+
+    @Override
+    public void showJokePunchline(Long id) {
+        //TODO
+    }
+
+
 }
