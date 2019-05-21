@@ -2,8 +2,8 @@ package hu.bme.szn.randomjokes.ui.jokes
 
 interface JokeScreen {
 
-    fun showRandomJokeSetup()
+    fun showJokeSetup(randomSetup: String)
 
-    fun showJokePunchline(id: Long)
+    fun showJokePunchline(randomPunchline: String)
 
 }

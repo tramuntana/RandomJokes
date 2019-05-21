@@ -9,7 +9,3 @@ val Activity.injector: RandomJokesApplicationComponent
         return (this.applicationContext as RandomJokesApplication).injector
     }
 
-val Fragment.injector: RandomJokesApplicationComponent
-    get() {
-        return (this.context!!.applicationContext as RandomJokesApplication).injector
-    }

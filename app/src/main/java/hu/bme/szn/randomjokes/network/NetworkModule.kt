@@ -19,21 +19,6 @@ class NetworkModule {
         return OkHttpClient.Builder().addInterceptor(interceptor).build()
     }
 
-    @Provides
-    @Singleton
-    fun provideOkHttpClient(builder: OkHttpClient.Builder): OkHttpClient {
-        return builder.build()
-    }
-
-    @Provides
-    @Singleton
-    fun provideRetrofit(client: OkHttpClient): Retrofit {
-        return Retrofit.Builder()
-                .baseUrl(NetworkConfig.ENDPOINT_ADDRESS)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-    }
 
     @Provides
     @Singleton

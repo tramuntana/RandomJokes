@@ -21,7 +21,7 @@ interface JokeApi {
      * @return Call<Joke>
      */
 
-    @GET("Jokes")
+    @GET(".")
     fun jokeGetOne(): Call<Joke>
 
     /**
@@ -31,7 +31,7 @@ interface JokeApi {
      * @param data An object of model property name/value pairs
      * @return Call<Joke>
      */
-
+/*
     @PUT("Jokes")
     fun jokeUpdate(
     @Path("id") id: BigDecimal, @Body data: Joke): Call<Joke>
@@ -56,5 +56,5 @@ interface JokeApi {
      */
 
     @DELETE("Jokes")
-    fun jokeDeleteById(@Path("id") id: BigDecimal): Call<ResponseBody>
+    fun jokeDeleteById(@Path("id") id: BigDecimal): Call<ResponseBody>*/
 }

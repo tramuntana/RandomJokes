@@ -5,6 +5,7 @@ import dagger.Provides
 
 import hu.bme.szn.randomjokes.interactor.jokes.JokesInteractor
 import hu.bme.szn.randomjokes.network.JokeApi
+import hu.bme.szn.randomjokes.repository.room.MyDatabase
 
 import javax.inject.Singleton
 

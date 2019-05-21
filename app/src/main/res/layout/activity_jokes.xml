@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,14 +20,93 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_jokes" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <Button
+        android:id="@+id/btnGetOneMore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="76dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorRed"
+        android:padding="10dp"
+        android:text="I want more!"
+        android:textColor="@color/colorGrey"/>
 
-</android.support.design.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btnGetMine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="76dp"
+        android:layout_marginRight="220dp"
+        android:layout_marginBottom="100dp"
+        android:background="@color/colorRed"
+        android:padding="10dp"
+        android:text="Show mine!"
+        android:textColor="@color/colorGrey"/>
+
+    <ImageButton
+        android:id="@+id/btnGetPunchline"
+        android:src="@drawable/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@null"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/newFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="38dp"
+        android:src="@android:drawable/ic_menu_add"
+        app:backgroundTint="@color/colorRed" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/deleteFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="176dp"
+        android:layout_marginBottom="38dp"
+        android:src="@android:drawable/ic_menu_delete"
+        app:backgroundTint="@color/colorRed" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/editFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="310dp"
+        android:layout_marginBottom="40dp"
+        android:src="@android:drawable/ic_menu_edit"
+        app:backgroundTint="@color/colorRed" />
+
+    <TextView
+        android:id="@+id/punchline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/font_size"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="215dp" />
+
+    <TextView
+        android:id="@+id/setup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="177dp"
+        android:layout_marginBottom="215dp"
+        android:textSize="@dimen/font_size" />
+
+</RelativeLayout>

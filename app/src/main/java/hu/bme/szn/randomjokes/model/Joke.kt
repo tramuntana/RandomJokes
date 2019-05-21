@@ -1,19 +1,23 @@
 package hu.bme.szn.randomjokes.model
 
-
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.google.gson.annotations.SerializedName;
 
+@Entity
 class Joke(
 
     @SerializedName("setup")
-    val setup: String,
+    var setup: String,
 
     @SerializedName("punchline")
-    val punchline: String,
+    var punchline: String,
 
     @SerializedName("type")
-    val type: String,
+    var type: String,
 
     @SerializedName("id")
+    @PrimaryKey
     val id: Long
+
 )

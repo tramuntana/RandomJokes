@@ -2,28 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hu.bme.szn.randomjokes">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".RandomJokesApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_bazinga"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.newjokes.NewJokesActivity"
-            android:label="@string/title_activity_new_jokes"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".ui.editjokes.EditJokesActivity"
-            android:label="@string/title_activity_edit_jokes"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ui.about.AboutActivity"
-            android:label="@string/title_activity_about"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.jokes.JokeActivity"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_joke"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c406c9604d07e4d7d217491323d29935d34b283f" />
     </application>
 
 </manifest>

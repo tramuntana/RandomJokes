@@ -6,22 +6,29 @@ import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
 import android.arch.persistence.room.Update
 
-import hu.bme.szn.randomjokes.model.Joke
+import hu.bme.szn.randomjokes.model.MyJoke
 
 @Dao
 interface JokeDao {
 
-   // @Query("SELECT * FROM jokes WHERE id = :id")
-    fun getJoke(id: Long): Joke
+    @Query("SELECT * FROM myjokes ORDER BY RANDOM() LIMIT 1")
+    fun getJoke(): MyJoke
+
+    @Query("SELECT * FROM myjokes WHERE setup = :setup")
+    fun findBySetup(setup: String): MyJoke
 
     @Insert
-    fun saveJoke(joke: Joke)
+    fun saveJoke(joke: MyJoke)
 
-    @Update
-    fun updateJoke(joke: Joke)
+    @Query("UPDATE myjokes SET punchline = :punchline WHERE setup = :setup")
+    fun updateJoke(setup: String, punchline: String)
 
-    @Delete
-    fun deleteJoke(joke: Joke)
+    @Query("DELETE FROM myjokes WHERE setup = :setup")
+    fun deleteJokeBySetup(setup: String)
 
+    @Query("DELETE FROM myjokes")
+    fun deleteAll()
 
+    @Query("SELECT * FROM myjokes")
+    fun loadAllJokes(): Array<MyJoke>
 }
